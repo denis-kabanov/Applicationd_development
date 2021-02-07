@@ -3,9 +3,11 @@
 #ifndef INCLUDE_GROUP_H_
 #define INCLUDE_GROUP_H_
 
-#include <algorithm>
-#include <string>
 #include <vector>
+#include <string>
+#include <algorithm>
+#include <random>
+#include <ctime>
 #include "Student.h"
 
 class Student;
