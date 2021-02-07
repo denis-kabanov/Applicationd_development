@@ -56,7 +56,7 @@ TEST(Test, test6) {
   Group group1(title, spec1);
   group1.addStudent(&student1);
   student1.addToGroup(&group1);
-  EXPECT_NEAR(&student1, group.getStudent("Kolya Klimov"));
+  EXPECT_EQ(&student1, group.getStudent("Kolya Klimov"));
 }
 
 TEST(Test, test7) {
