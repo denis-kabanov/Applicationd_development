@@ -36,7 +36,7 @@ void Group::addStudent(Student* newstudent) {
 
 void Group::chooseHead() {
     srand(time(NULL));
-    int headnumber = rand() % (students.size() - 1);
+    int headnumber = rand_r() % (students.size() - 1);
     std::cout << headnumber;
     this->head = students[headnumber];
 }
