@@ -56,7 +56,7 @@ TEST(Test, test6) {
   Group group1(title, spec1);
   group1.addStudent(&student1);
   student1.addToGroup(&group1);
-  EXPECT_EQ(&student1, group.getStudent("Kolya Klimov"));
+  EXPECT_EQ(&student1, group1.getStudent("Kolya Klimov"));
 }
 
 TEST(Test, test7) {
@@ -85,7 +85,7 @@ TEST(Test, test8) {
   student2.addToGroup(&group1);
   student1.addMark(1);
   student2.addMark(3);
-  EXPECT_EQ(2, group.getAveragemark());
+  EXPECT_EQ(2, group1.getAveragemark());
 }
 
 TEST(Test, test9) {
@@ -98,17 +98,17 @@ TEST(Test, test9) {
   student1.addToGroup(&group1);
   group1.addStudent(&student2);
   student2.addToGroup(&group1);
-  EXPECT_EQ(false, group.isEmpty());
+  EXPECT_EQ(false, group1.isEmpty());
 }
 
 TEST(Test, test10) {
   std::string title = "IMIKN", spec1 = "PMI";
   Group group1(title, spec1);
-  EXPECT_EQ(true, group.isEmpty());
+  EXPECT_EQ(true, group1.isEmpty());
 }
 
 TEST(Test, test11) {
   std::string title = "IMIKN", spec1 = "PMI";
   Group group1(title, spec1);
-  EXPECT_EQ("IMIKN", group.getTitle());
+  EXPECT_EQ("IMIKN", group1.getTitle());
 }
