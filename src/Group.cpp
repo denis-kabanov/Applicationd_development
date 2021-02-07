@@ -5,6 +5,7 @@
 #include <iostream>
 #include <ctime>
 #include <random>
+#include <stdlib.h>
 
 Group::Group(std::string newtitle) {
     this->title = newtitle;
@@ -35,8 +36,8 @@ void Group::addStudent(Student* newstudent) {
 }
 
 void Group::chooseHead() {
-    srand(time(NULL));
-    int headnumber = rand_r() % (students.size() - 1);
+    srand(time(0));
+    int headnumber = rand() % (students.size() - 1);
     std::cout << headnumber;
     this->head = students[headnumber];
 }

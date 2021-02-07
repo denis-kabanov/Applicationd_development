@@ -29,7 +29,7 @@ void Deanary::hireStudents(std::string filename) {
     while (getline(file, input)) {
         Student* stud = new Student(groupid++, input);
         srand(time(NULL));
-        int newstudid = rand_r() % (groups.size() - 1);
+        int newstudid = rand() % (groups.size() - 1);
         groups[newstudid]->addStudent(stud);
         stud->addToGroup(groups[newstudid]);
     }
@@ -40,7 +40,7 @@ void Deanary::addMarksToAll() {
     for (auto group : groups) {
         for (auto stud : group->containsStudents()) {
             srand(time(NULL));
-            int mark = rand_r() % 5;
+            int mark = rand() % 5;
             stud->addMark(mark);
         }
     }
