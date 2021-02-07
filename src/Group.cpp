@@ -6,7 +6,7 @@
 #include <ctime>
 #include <random>
 
-Group::Group(std::string newtitle) { 
+Group::Group(std::string newtitle) {
     this->title = newtitle;
 }
 
@@ -19,8 +19,8 @@ Group::Group(std::string newtitle, std::string newspec) {
     spec = newspec;
 }
 
-int Group::getStudents() { 
-	int studcount = 0;
+int Group::getStudents() {
+    int studcount = 0;
     for (auto members : this->students) {
         studcount++;
     }
@@ -52,8 +52,7 @@ float Group::getAveragemark() {
         return 0;
 }
 
-Student* Group::getStudent(unsigned int findid) 
-{
+Student* Group::getStudent(unsigned int findid) {
     for (auto stud : students) {
         if (stud->getId() == findid)
             return stud;
@@ -63,17 +62,17 @@ Student* Group::getStudent(unsigned int findid)
 
 Student* Group::getStudent(std::string findfio) {
     for (auto stud : students) {
-        if (stud->getFio() == findfio) 
+        if (stud->getFio() == findfio)
             return stud;
     }
     return nullptr;
 }
 
-Student* Group::getHead() { 
+Student* Group::getHead() {
     return head;
 }
 
-std::vector<Student*> Group::containsStudents() { 
+std::vector<Student*> Group::containsStudents() {
     return students;
 }
 
@@ -86,14 +85,14 @@ std::string Group::getSpec() {
 }
 
 void Group::removeStudent(Student* delstudent) {
-  delstudent->addToGroup(nullptr);
-  students.erase(std::remove(students.begin(), students.end(), delstudent),
-                 students.end());
+    delstudent->addToGroup(nullptr);
+    students.erase(std::remove(students.begin(), students.end(), delstudent),
+students.end());
 }
 
 bool Group::isEmpty() {
-    if (students.size() == 0) 
-		return true;
-	else 
-	    return false; 
+    if (students.size() == 0)
+        return true;
+    else 
+        return false; 
 }

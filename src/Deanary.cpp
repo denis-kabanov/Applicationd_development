@@ -16,7 +16,7 @@ void Deanary::createGroups(std::string fileninp) {
         spec = input.substr(0, pos);
         title = input.substr(pos + 1, input.size() - pos - 1);
         std::cout << spec << "\n";
-		Group* group = new Group(title, spec);
+        Group* group = new Group(title, spec);
         groups.push_back(group);
     }
     file.close();
@@ -28,10 +28,7 @@ void Deanary::hireStudents(std::string filename) {
     while (getline(file, input)) {
         Student* stud = new Student(groupid++, input);
         srand(time(NULL));
-        int newstudid = rand() % (groups.size() - 1);
-        //std::mt19937 gen(time(0));
-        //std::uniform_int_distribution<> uid(0, groups.size() - 1);
-        //int newstudid = uid(gen);
+        int newstudid = rand_r() % (groups.size() - 1);
         groups[newstudid]->addStudent(stud);
         stud->addToGroup(groups[newstudid]);
     }
@@ -58,7 +55,7 @@ void Deanary::getStatistics(std::string filename) {
         auto groupcont = group->containsStudents();
         for (auto stud : groupcont) {
             filestat << stud->getId() << " " << stud->getFio()
-				<< " " << stud->getAveragemark() << "\n";
+<< " " << stud->getAveragemark() << "\n";
         }
     }
 }
@@ -112,7 +109,7 @@ Group* Deanary::getGroup(std::string title) {
             return group;
         }
     }
-	if (flag == 0)
+    if (flag == 0)
         return nullptr;
 }
 
@@ -126,6 +123,6 @@ Student* Deanary::getStudent(int id) {
             return find;
         }
     }
-	if (flag == 0)
+    if (flag == 0)
         return nullptr;
 }
