@@ -2,9 +2,6 @@
 
 #include "Group.h"
 #include "Student.h"
-#include <iostream>
-#include <ctime>
-#include <random>
 
 Group::Group(std::string newtitle) {
     this->title = newtitle;
@@ -35,10 +32,9 @@ void Group::addStudent(Student* newstudent) {
 }
 
 void Group::chooseHead() {
-    srand(time(0));
-    int headnumber = rand() % (students.size() - 1);
-    std::cout << headnumber;
-    this->head = students[headnumber];
+    std::mt19937 gen(time(0));
+    std::uniform_int_distribution<> uid(0, students.size() - 1);
+    head = students[uid(gen)];
 }
 
 float Group::getAveragemark() {
