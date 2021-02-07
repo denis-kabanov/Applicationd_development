@@ -69,8 +69,7 @@ void Deanary::moveStudents(int id, std::string title) {
     stud->addToGroup(group);
 }
 
-void Deanary::saveStaff(std::string filegroups,
-std::string filestudents) {
+void Deanary::saveStaff(std::string filegroups, std::string filestudents) {
     std::ofstream fgroups(filegroups);
     std::ofstream fstudents(filestudents);
     for (auto group : groups) {
