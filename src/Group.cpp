@@ -5,7 +5,6 @@
 #include <iostream>
 #include <ctime>
 #include <random>
-#include <stdlib.h>
 
 Group::Group(std::string newtitle) {
     this->title = newtitle;
