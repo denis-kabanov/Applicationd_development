@@ -85,7 +85,7 @@ TEST(Test, test8) {
   student2.addToGroup(&group1);
   student1.addMark(1);
   student2.addMark(3);
-  EXPECT_NEAR(2, group.getAveragemark());
+  EXPECT_EQ(2, group.getAveragemark());
 }
 
 TEST(Test, test9) {
@@ -98,17 +98,17 @@ TEST(Test, test9) {
   student1.addToGroup(&group1);
   group1.addStudent(&student2);
   student2.addToGroup(&group1);
-  EXPECT_NEAR(false, group.isEmpty());
+  EXPECT_EQ(false, group.isEmpty());
 }
 
 TEST(Test, test10) {
   std::string title = "IMIKN", spec1 = "PMI";
   Group group1(title, spec1);
-  EXPECT_NEAR(true, group.isEmpty());
+  EXPECT_EQ(true, group.isEmpty());
 }
 
 TEST(Test, test11) {
   std::string title = "IMIKN", spec1 = "PMI";
   Group group1(title, spec1);
-  EXPECT_NEAR("IMIKN", group.getTitle());
+  EXPECT_EQ("IMIKN", group.getTitle());
 }
