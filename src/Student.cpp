@@ -8,12 +8,12 @@ Student::Student(unsigned int newid, std::string newfio) {
 }
 
 void Student::addToGroup(Group* togroup) {
-    this->group = togroup; 
+    this->group = togroup;
     this->group->addStudent(this);
 }
 
 void Student::addMark(int newmark) {
-    this->marks.push_back(newmark); 
+    this->marks.push_back(newmark);
 }
 
 float Student::getAveragemark() {
@@ -30,15 +30,15 @@ float Student::getAveragemark() {
 }
 
 int Student::getId() {
-    return this->id; 
+    return this->id;
 }
 
 std::string Student::getFio() {
     return this->fio;
 }
 
-Group* Student::getGroup() { 
-    return this->group; 
+Group* Student::getGroup() {
+    return this->group;
 }
 
 bool Student::isHeadOfGroup() {

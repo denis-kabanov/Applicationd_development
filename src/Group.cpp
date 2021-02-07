@@ -93,6 +93,6 @@ students.end());
 bool Group::isEmpty() {
     if (students.size() == 0)
         return true;
-    else 
-        return false; 
+    else
+        return false;
 }

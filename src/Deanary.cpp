@@ -1,6 +1,7 @@
 // Copyright 06.02.21 DenisKabanov
 
 #include "Deanary.h"
+#include <stdlib.h>
 
 Deanary::Deanary(std::string file) {
     groupid = 1;
@@ -28,7 +29,7 @@ void Deanary::hireStudents(std::string filename) {
     while (getline(file, input)) {
         Student* stud = new Student(groupid++, input);
         srand(time(NULL));
-        int newstudid = rand_r() % (groups.size() - 1);
+        int newstudid = rand() % (groups.size() - 1);
         groups[newstudid]->addStudent(stud);
         stud->addToGroup(groups[newstudid]);
     }
@@ -72,10 +73,10 @@ void Deanary::saveStaff(std::string filegroups,
 std::string filestudents) {
     std::ofstream fgroups(filegroups);
     std::ofstream fstudents(filestudents);
-    for (auto g : groups) {
-        auto list_group = g->containsStudents();
-        fgroups << g->getSpec() << ":" << g->getTitle() << "\n";
-        for (auto stud : list_group) {
+    for (auto group : groups) {
+        auto groupcont = group->containsStudents();
+        fgroups << group->getSpec() << ":" << group->getTitle() << "\n";
+        for (auto stud : groupcont) {
             fstudents << stud->getFio() << "\n";
         }
     }
