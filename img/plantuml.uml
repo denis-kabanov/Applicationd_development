@@ -4,9 +4,9 @@ class Student {
  -fio
  -group
  -marks
- -addToGroup()
- -addmark()
- +getAveragemark()
+ +addToGroup()
+ +addmark()
+ +getAverageMark()
  +isHeadOfGroup()
 }
 
@@ -15,12 +15,12 @@ class Group {
  -spec
  -students
  -head
- -addStudent()
- -chooseHead()
- +getAveragemark()
+ +addStudent()
+ +chooseHead()
+ +getAverageMark()
  +getStudent()
  +containsStudent()
- -removeStudent()
+ +removeStudent()
  +isEmpty()
 }
 
@@ -31,9 +31,8 @@ class Deanary {
   +addMarksToAll()
   +getStatistics()
   +moveStudents()
-  +saveStaff()
-  +initHeads()
   +fireStudents()
+  +initHeads()
 }
 
 

@@ -19,7 +19,7 @@ void Group::addStudent(Student *newstudent) {
 void Group::chooseHead() {
     std::mt19937 gen(time(0));
     std::uniform_int_distribution<> uid(0, students.size() - 1);
-    this->head = students[uid(gen)];
+    this->head = this->students[uid(gen)];
 }
 
 Student* Group::getStudent(unsigned int findid) {
@@ -40,24 +40,25 @@ Student* Group::getStudent(std::string findfio) {
 
 float Group::getAverageMark() {
     float sum = 0;
+    int counter = 0;
     for (auto stud : students) {
         sum = sum + stud->getAverageMark();
+        counter++;
     }
-    if (sum != 0)
-        return (sum / this->getStudents());
+    if (counter != 0)
+        return (sum / counter);
     else
         return 0;
 }
 
 void Group::removeStudent(Student* delstudent) {
     delstudent->addToGroup(nullptr);
-    this->students.erase(std::remove(students.begin(),
-                         students.end(), delstudent),
-students.end());
+    std::remove(this->students.begin(),
+                this->students.end(), delstudent);
 }
 
 bool Group::isEmpty() {
-    if (students.size() == 0)
+    if (this->students.size() == 0)
         return true;
     else
         return false;
@@ -65,24 +66,24 @@ bool Group::isEmpty() {
 
 int Group::getStudents() {
     int studcount = 0;
-    for (auto members : this->students) {
+    for (auto stud : this->students) {
         studcount++;
     }
     return studcount;
 }
 
 std::string Group::getTitle() {
-    return title;
+    return this->title;
 }
 
 std::string Group::getSpec() {
-    return spec;
+    return this->spec;
 }
 
 std::vector<Student*> Group::containsStudents() {
-    return students;
+    return this->students;
 }
 
 Student* Group::getHead() {
-    return head;
+    return this->head;
 }
