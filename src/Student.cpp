@@ -1,6 +1,6 @@
 // Copyright 06.02.21 DenisKabanov
 
-#include "Student.h"
+#include <Student.hpp>
 
 Student::Student(unsigned int newid, std::string newfio) {
     this->id = newid;
@@ -16,7 +16,7 @@ void Student::addMark(int newmark) {
     this->marks.push_back(newmark);
 }
 
-float Student::getAveragemark() {
+float Student::getAverageMark() {
     float allmarks = 0;
     int counter = 0;
     for (auto m : this->marks) {
@@ -27,6 +27,13 @@ float Student::getAveragemark() {
         return allmarks / counter;
     else
         return 0;
+}
+
+bool Student::isHeadOfGroup() {
+    if (this == group->getHead())
+        return true;
+    else
+        return false;
 }
 
 int Student::getId() {
@@ -41,9 +48,6 @@ Group* Student::getGroup() {
     return this->group;
 }
 
-bool Student::isHeadOfGroup() {
-    if (this == group->getHead())
-        return true;
-    else
-        return false;
+std::vector<int> Student::getMarks(){
+    return this->marks;
 }

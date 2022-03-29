@@ -1,9 +1,9 @@
 // Copyright 06.02.21 DenisKabanov
 
-#include "Deanary.h"
-#include <stdlib.h>
+#include <iostream>
+#include <Deanery.hpp>
 
-Deanary::Deanary(std::string file) {
+Deanery::Deanery(std::string file) {
     groupid = 1;
     createGroups(file);
     initHeads();

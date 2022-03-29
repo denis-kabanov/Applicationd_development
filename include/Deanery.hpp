@@ -1,7 +1,7 @@
 // Copyright 06.02.21 DenisKabanov
 
-#ifndef INCLUDE_DEANARY_H_
-#define INCLUDE_DEANARY_H_
+#ifndef INCLUDE_DEANERY_H_
+#define INCLUDE_DEANERY_H_
 
 #include <vector>
 #include <string>
@@ -10,16 +10,16 @@
 #include <ctime>
 #include <fstream>
 #include <iostream>
-#include "Student.h"
-#include "Group.h"
+#include <Student.hpp>
+#include <Group.hpp>
 
-class Deanary {
+class Deanery {
  private:
     std::vector<Group*> groups;
     unsigned int groupid = 0;
 
  public:
-    explicit Deanary(std::string file);
+    explicit Deanery(std::string file); // коснтруктор для объекта класса деканат
     void createGroups(std::string file);
     void hireStudents(std::string file);
     void addMarksToAll();
@@ -31,4 +31,4 @@ class Deanary {
     Group* getGroup(std::string title);
     Student* getStudent(int id);
 };
-#endif  // INCLUDE_DEANARY_H_
+#endif  // INCLUDE_DEANERY_H_
