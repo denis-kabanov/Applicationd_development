@@ -54,7 +54,7 @@ float Group::getAverageMark() {
 void Group::removeStudent(Student* delstudent) {
     delstudent->addToGroup(nullptr);
     if (this->head == delstudent)
-        this->head = bullptr;
+        this->head = nullptr;
     this->students.erase(std::remove(this->students.begin(),
                          this->students.end(), delstudent));
 }
