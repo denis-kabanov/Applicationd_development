@@ -14,4 +14,4 @@ jobs:
     - name: make
       run: cd build && make
     - name: Run Test
-      run: /home/runner/work/tp-lab-5/tp-lab-5/build/test/tp-lab-5.test
+      run: /home/runner/work/Applicationd_development/Applicationd_development/build/test/Applicationd_development.test
