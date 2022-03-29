@@ -1,8 +1,8 @@
 // Copyright 06.02.21 DenisKabanov
 
-#include <Deanery.hpp>
-#include <Group.hpp>
 #include <Student.hpp>
+#include <Group.hpp>
+#include <Deanery.hpp>
 
 int main() {
     unsigned int id1 = 1, id2 = 2;

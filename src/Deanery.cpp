@@ -9,7 +9,7 @@ Deanery::Deanery(std::string file) {
     initHeads();
 }
 
-void Deanary::createGroups(std::string fileninp) {
+void Deanery::createGroups(std::string fileninp) {
     std::ifstream file(fileninp);
     std::string input, spec, title;
     while (getline(file, input)) {
@@ -23,7 +23,7 @@ void Deanary::createGroups(std::string fileninp) {
     file.close();
 }
 
-void Deanary::hireStudents(std::string filename) {
+void Deanery::hireStudents(std::string filename) {
     std::ifstream file(filename);
     std::string input;
     while (getline(file, input)) {
@@ -37,7 +37,7 @@ void Deanary::hireStudents(std::string filename) {
     file.close();
 }
 
-void Deanary::addMarksToAll() {
+void Deanery::addMarksToAll() {
     for (auto group : groups) {
         for (auto stud : group->containsStudents()) {
             std::mt19937 gen(time(0));
@@ -48,22 +48,22 @@ void Deanary::addMarksToAll() {
     }
 }
 
-void Deanary::getStatistics(std::string filename) {
+void Deanery::getStatistics(std::string filename) {
     std::ofstream filestat(filename);
     filestat.precision(2);
     filestat.setf(std::ios::fixed);
     for (auto group : groups) {
         filestat << group->getSpec() << "\n" << group->getTitle() << "\n";
-        filestat << "Average mark: " << group->getAveragemark() << "\n";
+        filestat << "Average mark: " << group->getAverageMark() << "\n";
         auto groupcont = group->containsStudents();
         for (auto stud : groupcont) {
             filestat << stud->getId() << " " << stud->getFio()
-<< " " << stud->getAveragemark() << "\n";
+<< " " << stud->getAverageMark() << "\n";
         }
     }
 }
 
-void Deanary::moveStudents(int id, std::string title) {
+void Deanery::moveStudents(int id, std::string title) {
     Student* stud = getStudent(id);
     Group* group = getGroup(title);
     stud->getGroup()->removeStudent(stud);
@@ -71,7 +71,7 @@ void Deanary::moveStudents(int id, std::string title) {
     stud->addToGroup(group);
 }
 
-void Deanary::saveStaff(std::string filegroups, std::string filestudents) {
+void Deanery::saveStaff(std::string filegroups, std::string filestudents) {
     std::ofstream fgroups(filegroups);
     std::ofstream fstudents(filestudents);
     for (auto group : groups) {
@@ -85,17 +85,17 @@ void Deanary::saveStaff(std::string filegroups, std::string filestudents) {
     fstudents.close();
 }
 
-void Deanary::initHeads() {
+void Deanery::initHeads() {
     for (auto g : groups) {
         g->chooseHead();
     }
 }
 
-void Deanary::fireStudents() {
+void Deanery::fireStudents() {
     for (auto group : groups) {
         auto groupcont = group->containsStudents();
         for (auto stud : groupcont) {
-            float mark = stud->getAveragemark();
+            float mark = stud->getAverageMark();
             if (mark < 3.0) {
                 group->removeStudent(stud);
             }
@@ -103,7 +103,7 @@ void Deanary::fireStudents() {
     }
 }
 
-Group* Deanary::getGroup(std::string title) {
+Group* Deanery::getGroup(std::string title) {
     int flag = 0;
     for (auto group : groups) {
         if (group->getTitle() == title) {
@@ -115,7 +115,7 @@ Group* Deanary::getGroup(std::string title) {
         return nullptr;
 }
 
-Student* Deanary::getStudent(int id) {
+Student* Deanery::getStudent(int id) {
     int flag = 0;
     Student* find = nullptr;
     for (auto group : groups) {

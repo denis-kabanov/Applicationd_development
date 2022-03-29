@@ -8,9 +8,9 @@ Group::Group(std::string newtitle, std::string newspec) {
     this->spec = newspec;
 }
 
-void Group::addStudent(Student* newstudent) {
-    if ((this->getStudent(newstudent->getId()) == nullptr ) &&
-        (this->getStudent(newstudent->getFio()) == nullptr )) {
+void Group::addStudent(Student *newstudent) {
+    if ((this->getStudent(newstudent->getId()) == nullptr) &&
+        (this->getStudent(newstudent->getFio()) == nullptr)) {
         this->students.push_back(newstudent);
         newstudent->addToGroup(this);
     }

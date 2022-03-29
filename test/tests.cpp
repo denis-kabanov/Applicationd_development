@@ -2,9 +2,9 @@
 
 #include <gtest/gtest.h>
 #include <string>
-#include "Student.h"
-#include "Group.h"
-#include "Deanary.h"
+#include <Student.hpp>
+#include <Group.hpp>
+#include <Deanery.hpp>
 
 TEST(Test, test1) {
   unsigned int id = 1;
@@ -18,7 +18,7 @@ TEST(Test, test2) {
   std::string fio1 = "Kolya Klimov";
   Student student1(id1, fio1);
   student1.addMark(5);
-  EXPECT_EQ(5, student1.getAveragemark());
+  EXPECT_EQ(5, student1.getAverageMark());
 }
 
 TEST(Test, test3) {
@@ -27,7 +27,7 @@ TEST(Test, test3) {
   Student student1(id1, fio1);
   student1.addMark(5);
   student1.addMark(1);
-  EXPECT_EQ(3, student1.getAveragemark());
+  EXPECT_EQ(3, student1.getAverageMark());
 }
 
 TEST(Test, test4) {
@@ -85,7 +85,7 @@ TEST(Test, test8) {
   student2.addToGroup(&group1);
   student1.addMark(1);
   student2.addMark(3);
-  EXPECT_EQ(2, group1.getAveragemark());
+  EXPECT_EQ(2, group1.getAverageMark());
 }
 
 TEST(Test, test9) {
