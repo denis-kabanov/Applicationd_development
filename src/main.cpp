@@ -13,7 +13,7 @@ int main() {
     Deanery.addMarksToAll();
     Deanery.getStatistics();
     Deanery.fireStudents();
-
+    std::cout << "======================================" << std::endl;
     // Работа с созданными группами
     unsigned int id1 = 1, id2 = 2;
     std::string fio1 = "STUDENT1", fio2 = "STUDENT2";
@@ -31,7 +31,10 @@ int main() {
     std::cout << "Average mark: " << group.getAverageMark() << std::endl;
     std::cout << "address of student with id 2 " << group.getStudent(2)
         << std::endl;
-    std::cout << "address of student with name Danya Kvasin "
-        << group.getStudent("Danya Kvasin") << std::endl;
+    std::cout << "address of student with name STUDENT1 "
+        << group.getStudent("STUDENT1") << std::endl;
+    group.removeStudent(&student1);
+    if (student1.getGroup() == &group)
+        throw "ERROR";
     return 0;
 }

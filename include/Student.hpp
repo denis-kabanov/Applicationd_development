@@ -12,9 +12,9 @@ class Group;
 class Student {
  private:
     /// идентификатор студента
-    unsigned int id;
+    unsigned int id = 0;
     /// ФИО студента
-    std::string fio;
+    std::string fio = "";
     /// группа, к которой принадлежит студент
     Group* group = nullptr;
     /// оценки студента

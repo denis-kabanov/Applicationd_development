@@ -9,7 +9,6 @@ Student::Student(unsigned int newid, std::string newfio) {
 
 void Student::addToGroup(Group* togroup) {
     this->group = togroup;
-    this->group->addStudent(this);
 }
 
 void Student::addMark(int newmark) {
