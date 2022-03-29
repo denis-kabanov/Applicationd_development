@@ -57,7 +57,7 @@ void Deanery::getStatistics() {
             << group->getSpec() << "\t" << "Average mark: "
             << group->getAverageMark() << "\n";
         auto groupcont = group->containsStudents();
-        std::cout << "Студенты группы:" << "\n";
+        std::cout << "Group students:" << "\n";
         for (auto stud : groupcont) {
             std::cout << stud->getId() << " " << stud->getFio()
                 << " avg mark:" << stud->getAverageMark() << "\n";

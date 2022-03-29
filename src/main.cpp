@@ -13,14 +13,14 @@ int main() {
     Deanery.addMarksToAll();
     Deanery.getStatistics();  // Выводим статистику по студентам
 
-    std::cout << "Старосты до назначения:" << std::endl;
+    std::cout << "Heads before:" << std::endl;
     for (auto group : Deanery.getGroups()) {
         if (group->getHead() != nullptr)
             std::cout << group->getHead()->getId() << std::endl;
     }
 
     Deanery.initHeads();
-    std::cout << "Старосты после назначения:" << std::endl;
+    std::cout << "Heads after:" << std::endl;
     for (auto group : Deanery.getGroups()) {
             if (group->getHead() != nullptr)
                 std::cout << group->getHead()->getId() << std::endl;
@@ -38,17 +38,17 @@ int main() {
     Group group(title, spec);  // Создаём группу
     group.addStudent(&student1);  // Добавляем студентов в группу
     group.addStudent(&student2);
-    std::cout << "Назв: " << group.getTitle() << " Спец: " << group.getSpec()
+    std::cout << "Title: " << group.getTitle() << " Spec: " << group.getSpec()
         << std::endl;  // Выводим название и специальность группы
-    std::cout << "Пустая ли группа? " << group.isEmpty() << std::endl;
+    std::cout << "group is empty? " << group.isEmpty() << std::endl;
     student1.addMark(5);  // Добавляем оценки студентам
     student1.addMark(2);
     student2.addMark(1);
     // Считаем средние оценки у группы, а также ищем студентов в группе
-    std::cout << "Средняя оценка: " << group.getAverageMark() << std::endl;
-    std::cout << "указатель на студента с id 2 " << group.getStudent(2)
+    std::cout << "Avg mark: " << group.getAverageMark() << std::endl;
+    std::cout << "address of student with id = 2 " << group.getStudent(2)
         << std::endl;
-    std::cout << "указатель на студента с именем STUDENT1 "
+    std::cout << "address of student with name STUDENT1 "
         << group.getStudent("STUDENT1") << std::endl;
     // Проверка принадлежности студента к группе
     if (student1.getGroup() != &group)

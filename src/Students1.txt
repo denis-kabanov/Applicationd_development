@@ -1,6 +1,6 @@
-Студент1
-Студент2
-Студент3
-Студент4
-Студент5
-Студент6
+Student1
+Student2
+Student3
+Student4
+Student5
+Student6
