@@ -17,9 +17,10 @@ void Group::addStudent(Student *newstudent) {
 }
 
 void Group::chooseHead() {
-    std::mt19937 gen(time(0));
-    std::uniform_int_distribution<> uid(0, students.size() - 1);
-    this->head = this->students[uid(gen)];
+    std::random_device rd;
+    std::default_random_engine generator(rd());
+    int id = generator() % this->students.size();
+    this->head = this->students[id];
 }
 
 Student* Group::getStudent(unsigned int findid) {
