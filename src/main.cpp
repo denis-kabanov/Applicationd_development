@@ -36,5 +36,10 @@ int main() {
     group.removeStudent(&student1);
     if (student1.getGroup() == &group)
         throw "ERROR";
+    if (group.isEmpty()==true)
+        throw "ERROR";
+    group.removeStudent(&student2);
+    if (group.isEmpty()==false)
+        throw "ERROR";
     return 0;
 }
