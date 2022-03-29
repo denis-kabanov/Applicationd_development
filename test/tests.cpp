@@ -134,7 +134,7 @@ TEST(Test, test13) {
   EXPECT_EQ(true, group1.isEmpty());
 }
 
-// Работа функции Group::getStudent(id) 
+// Работа функции Group::getStudent(id)
 TEST(Test, test14) {
   unsigned int id1 = 1;
   std::string fio1 = "Studen1";
