@@ -1,5 +1,5 @@
 
-# Lab-5
+# Applicationd development
 
 ### Разработать класс **Student** для хранения информации о студенте.
 

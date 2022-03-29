@@ -1,7 +1,7 @@
 // Copyright 06.02.21 DenisKabanov
 
-#ifndef INCLUDE_GROUP_H_
-#define INCLUDE_GROUP_H_
+#ifndef INCLUDE_GROUP_HPP_
+#define INCLUDE_GROUP_HPP_
 
 #include <vector>
 #include <string>
@@ -14,10 +14,14 @@ class Student;
 
 class Group {
  private:
-    std::string title; // название группы
-    std::string spec; // специальность
-    std::vector<Student*> students; // студенты в данной группе
-    Student* head = nullptr; // староста группы
+    /// название группы
+    std::string title;
+    /// специальность
+    std::string spec;
+    /// студенты в данной группе
+    std::vector<Student*> students;
+    /// староста группы
+    Student* head = nullptr;
 
  public:
     /// конструктор группы
@@ -48,4 +52,4 @@ class Group {
     Student* getHead();
 };
 
-#endif  // INCLUDE_GROUP_H_
+#endif  // INCLUDE_GROUP_HPP_

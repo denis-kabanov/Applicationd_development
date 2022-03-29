@@ -1,7 +1,7 @@
 // Copyright 06.02.21 DenisKabanov
 
-#ifndef INCLUDE_STUDENT_H_
-#define INCLUDE_STUDENT_H_
+#ifndef INCLUDE_STUDENT_HPP_
+#define INCLUDE_STUDENT_HPP_
 
 #include <string>
 #include <vector>
@@ -11,10 +11,14 @@ class Group;
 
 class Student {
  private:
-    unsigned int id; // идентификатор студента
-    std::string fio; // ФИО студента
-    Group* group = nullptr; // группа, к которой принадлежит студент
-    std::vector<int> marks; // оценки студента
+    /// идентификатор студента
+    unsigned int id;
+    /// ФИО студента
+    std::string fio;
+    /// группа, к которой принадлежит студент
+    Group* group = nullptr;
+    /// оценки студента
+    std::vector<int> marks;
 
  public:
     /// конструктор для объекта класса студент
@@ -37,4 +41,4 @@ class Student {
     std::vector<int> getMarks();
 };
 
-#endif  // INCLUDE_STUDENT_H_
+#endif  // INCLUDE_STUDENT_HPP_

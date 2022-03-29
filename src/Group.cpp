@@ -9,8 +9,8 @@ Group::Group(std::string newtitle, std::string newspec) {
 }
 
 void Group::addStudent(Student* newstudent) {
-    if (this->getStudent(newstudent->getId()) == nullptr ) && 
-    (this->getStudent(newstudent->getFio()) == nullptr ){
+    if ((this->getStudent(newstudent->getId()) == nullptr ) &&
+        (this->getStudent(newstudent->getFio()) == nullptr )) {
         this->students.push_back(newstudent);
         newstudent->addToGroup(this);
     }
@@ -51,7 +51,8 @@ float Group::getAverageMark() {
 
 void Group::removeStudent(Student* delstudent) {
     delstudent->addToGroup(nullptr);
-    this->students.erase(std::remove(students.begin(), students.end(), delstudent),
+    this->students.erase(std::remove(students.begin(),
+                         students.end(), delstudent),
 students.end());
 }
 

@@ -48,6 +48,6 @@ Group* Student::getGroup() {
     return this->group;
 }
 
-std::vector<int> Student::getMarks(){
+std::vector<int> Student::getMarks() {
     return this->marks;
 }
