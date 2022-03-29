@@ -18,7 +18,7 @@ int main() {
         if (group->getHead() != nullptr)
             std::cout << group->getHead()->getId() << std::endl;
     }
-    
+
     Deanery.initHeads();
     std::cout << "Старосты после назначения:" << std::endl;
     for (auto group : Deanery.getGroups()) {
